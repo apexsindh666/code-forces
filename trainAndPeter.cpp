@@ -7,8 +7,6 @@ int main() {
 
     string s, s1, s2;
     cin >> s >> s1 >> s2;
-
-    // Check forward
     bool forward = false;
     size_t pos1 = s.find(s1);
     if (pos1 != string::npos) {
@@ -17,12 +15,8 @@ int main() {
             forward = true;
         }
     }
-
-    // Reverse string
     string rev = s;
     reverse(rev.begin(), rev.end());
-
-    // Check backward
     bool backward = false;
     pos1 = rev.find(s1);
     if (pos1 != string::npos) {
@@ -31,8 +25,6 @@ int main() {
             backward = true;
         }
     }
-
-    // Output result
     if (forward && backward) cout << "both\n";
     else if (forward) cout << "forward\n";
     else if (backward) cout << "backward\n";
